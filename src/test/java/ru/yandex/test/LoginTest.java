@@ -5,8 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import ru.yandex.config.Config;
 import ru.yandex.page.*;
 
 import static org.junit.Assert.assertTrue;
@@ -20,16 +19,7 @@ public class LoginTest {
 
     @Before
     public void setup() {
-/*        ChromeOptions options = new ChromeOptions();
-        System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\WebDriver\\bin\\chromedriver.exe");
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://stellarburgers.nomoreparties.site");
-*/
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-        driver = new ChromeDriver(options);
+        driver = Config.get();
         driver.get("https://stellarburgers.nomoreparties.site");
     }
 

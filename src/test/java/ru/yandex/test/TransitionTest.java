@@ -5,8 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import ru.yandex.config.Config;
 import ru.yandex.page.AccountPage;
 import ru.yandex.page.ConstructorPage;
 import ru.yandex.page.LoginPage;
@@ -21,9 +20,7 @@ public class TransitionTest {
 
     @Before
     public void setup() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-        driver = new ChromeDriver(options);
+        driver = Config.get();
         driver.get("https://stellarburgers.nomoreparties.site");
     }
 
